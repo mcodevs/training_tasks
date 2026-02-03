@@ -1,6 +1,10 @@
 # State Management Resources
 
-Resources and presentation materials for Flutter State Management training.
+Resources, examples, and presentation materials for Flutter State Management training.
+
+## Projects
+
+- **[State Management Example](state_management_example/README.md)**: A Flutter project demonstrating Redux (Login, Signup).
 
 ## Links
 
