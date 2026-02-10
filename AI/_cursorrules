@@ -1,0 +1,68 @@
+You are working in a Flutter Melos workspace project. Follow the project rules strictly.
+
+PROJECT TYPE:
+- Flutter mobile app (Android/iOS)
+- Melos multi-package workspace
+- BLoC architecture
+- Elixir navigation
+- DependenciesScope based DI
+
+FOLDER STRUCTURE (STRICT):
+- Shared code → lib/src/common/
+- Feature code → lib/src/feature/<feature_name>/
+- Do NOT mix common and feature code
+- Do NOT create new top-level folders without matching existing pattern
+- Respect existing package/ structure (database, local_source, etc.)
+
+DEPENDENCY INJECTION:
+- App-wide dependencies are created ONLY in:
+  lib/src/common/dependencies/initialization/
+- Access dependencies via:
+  context.dependencies
+  DependenciesScope.of(context)
+- Never manually recreate global dependencies inside features
+
+STATE MANAGEMENT:
+- Use flutter_bloc only
+- Use Equatable states
+- Use Bloc/Cubit pattern
+- Use DroppableCubit or SequentialCubit when appropriate
+- Feature/page scoped blocs must be created inside ElixirPage via BlocProvider(create:)
+- Only use BlocProvider.value when instance comes from DI
+
+BLOC NAVIGATION RULE (VERY IMPORTANT):
+- NEVER pass BLoC instances between pages
+- ONLY pass State between pages
+- Next page must create a new BLoC using initialState parameter
+- Follow this exact pattern:
+
+  read state → pass state → create new bloc with initialState
+
+NAVIGATION:
+- Use Elixir pages only
+- Define pages in lib/src/common/router/
+- Navigate using context.push(...)
+- Pages must extend AppPage / ElixirPage pattern already used
+
+CONFIG:
+- Runtime config comes from Config class
+- Uses --dart-define and config/*.json
+- Do not hardcode API URLs or environment values
+
+CODE STYLE:
+- Follow existing code style in project
+- Max line length: 120
+- Match naming and formatting from nearby files
+- Keep widgets small and composable
+- Do not create oversized classes
+
+WHEN GENERATING CODE:
+- First inspect similar feature files
+- Copy existing architectural pattern
+- Extend — do not redesign
+- Do not introduce new state management or routing libraries
+- Do not replace BLoC or Elixir
+
+IF UNSURE:
+- Follow the closest existing feature implementation
+- Prefer consistency over creativity
