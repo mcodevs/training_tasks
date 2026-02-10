@@ -24,6 +24,12 @@ Deep dive into state management solutions and patterns in Flutter.
 
 - **Contents:** Presentations (PowerPoint) and links to expert discussions and articles.
 
+### 🤖 [AI](AI/README.md)
+
+Configuration and rules for AI-assisted development tools to ensure generated code adheres to project architecture and standards.
+
+- **Contents:** `_cursorrules` and AI configuration guidelines.
+
 ## Getting Started
 
 Navigate to any of the folders linked above to access specific resources. Each directory contains its own `README.md` with detailed information about its contents.
